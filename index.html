@@ -1330,19 +1330,29 @@
         }
 
         .question-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .question-scroll-area {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            min-height: 0;
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-gutter: stable;
-            min-height: 0;
+            padding-right: 12px;
         }
 
         .question-card .card-content {
             overflow: visible;
             flex: 1 1 auto;
             min-height: 0;
-            padding-right: 12px;
+            padding-right: 0;
         }
 
         .question-card .quiz-options {
@@ -3009,13 +3019,17 @@
                 </div>
                 <div class="card question-card" id="card-3">
                     <div class="card-title">Soal 1</div>
-                    <div class="card-content" id="question-card-3"></div>
-                    <div class="quiz-options" id="options-3"></div>
+                    <div class="question-scroll-area">
+                        <div class="card-content" id="question-card-3"></div>
+                        <div class="quiz-options" id="options-3"></div>
+                    </div>
                 </div>
                 <div class="card question-card" id="card-4">
                     <div class="card-title">Soal 2</div>
-                    <div class="card-content" id="question-card-4"></div>
-                    <div class="quiz-options" id="options-4"></div>
+                    <div class="question-scroll-area">
+                        <div class="card-content" id="question-card-4"></div>
+                        <div class="quiz-options" id="options-4"></div>
+                    </div>
                 </div>
             </div>
             <button class="btn-gold" id="continue-to-quiz-btn" style="display:none;">Lanjut ke Tantangan</button>
