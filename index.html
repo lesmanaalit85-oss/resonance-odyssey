@@ -1332,6 +1332,7 @@
         .question-card {
             display: flex;
             flex-direction: column;
+            height: 100%;
             min-height: 0;
         }
 
@@ -1339,13 +1340,16 @@
             display: flex;
             flex-direction: column;
             flex: 1 1 auto;
+            width: 100%;
             min-height: 0;
+            max-height: 100%;
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-gutter: stable;
             padding-right: 12px;
+            gap: 10px;
         }
 
         .question-card .card-content {
@@ -1357,6 +1361,7 @@
 
         .question-card .quiz-options {
             padding-right: 0;
+            flex-shrink: 0;
         }
 
         /* Uniform scrollbar styling for all card scrollable areas */
