@@ -1318,8 +1318,7 @@
             text-align: justify;
         }
 
-        .description-card .card-content,
-        .question-card .card-content {
+        .description-card .card-content {
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
@@ -1331,13 +1330,22 @@
         }
 
         .question-card {
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-gutter: stable;
             min-height: 0;
         }
 
-        .question-card .quiz-options {
+        .question-card .card-content {
             overflow: visible;
-            max-height: none;
+            flex: 1 1 auto;
+            min-height: 0;
+            padding-right: 12px;
+        }
+
+        .question-card .quiz-options {
             padding-right: 0;
         }
 
