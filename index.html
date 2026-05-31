@@ -1205,6 +1205,18 @@
             width: 100%;
         }
 
+        /* Override for question card quiz options */
+        .question-card .quiz-opt-btn,
+        .question-card .quiz-options button {
+            font-size: 10px !important;
+            padding: 8px 12px !important;
+            font-weight: 400 !important;
+            border: 1px solid #8B5E3C !important;
+            border-radius: 12px !important;
+            line-height: 1.4 !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+        }
+
         .quiz-opt-btn:hover {
             border-color: #E8D7B9;
             background: linear-gradient(135deg, #FFF0F7 0%, #FFDDE8 100%);
@@ -1511,9 +1523,11 @@
 
         #quiz-cards-overlay .quiz-options button,
         #quiz-cards-overlay .quiz-opt-btn {
-            font-size: clamp(12px, 1.4vw, 14px);
-            padding: clamp(12px, 1.8vw, 14px) clamp(12px, 1.8vw, 14px);
+            font-size: 10px !important;
+            padding: 8px 12px !important;
             border-radius: 12px;
+            font-weight: 400 !important;
+            line-height: 1.4 !important;
         }
 
         .quiz-options button:hover {
@@ -2600,6 +2614,13 @@
             .quiz-opt-btn {
                 padding: clamp(10px, 2vw, 14px) clamp(10px, 1.8vw, 12px);
                 font-size: clamp(12px, 2.3vw, 15px);
+            }
+
+            .question-card .quiz-opt-btn,
+            .question-card .quiz-options button {
+                font-size: 10px !important;
+                padding: 8px 12px !important;
+                font-weight: 400 !important;
             }
 
             #input-player-name {
