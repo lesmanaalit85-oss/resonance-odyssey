@@ -1292,7 +1292,7 @@
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             height: 100%;
             min-height: 0;
             overflow: hidden;
@@ -1308,6 +1308,9 @@
             color: #4E2E1E;
             margin-bottom: 8px;
             letter-spacing: 0.08em;
+            min-height: 3.4em;
+            display: flex;
+            align-items: flex-start;
         }
 
         .card-content {
@@ -1384,14 +1387,14 @@
         .question-card .quiz-options button,
         #quiz-cards-overlay .quiz-opt-btn {
             width: 100%;
-            padding: clamp(12px, 2vw, 15px) clamp(12px, 2vw, 16px);
+            padding: clamp(10px, 1.4vw, 12px) clamp(10px, 1.4vw, 12px);
             border-radius: 12px;
             border: 1px solid #8B5E3C;
-            font-weight: 700;
+            font-weight: 600;
             text-align: left;
             line-height: 1.4;
-            font-size: clamp(12px, 1.4vw, 14px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: clamp(11px, 1.2vw, 13px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .question-card .quiz-options button:hover,
