@@ -876,8 +876,9 @@
         }
 
         .tile {
-            background-size: cover;
-            background-position: center;
+            /* Ensure images inside tiles are fully visible and centered */
+            background-size: contain;
+            background-position: center center;
             background-repeat: no-repeat;
             border: 2px solid #C89B3C;
             display: flex;
@@ -940,8 +941,8 @@
         .side-bottom .tile-header { display: none; }
         .side-left .tile-header { display: none; }
         .corner-tile { 
-            background-size: cover;
-            background-position: center;
+            background-size: contain;
+            background-position: center center;
             background-repeat: no-repeat;
             border: 3px solid #C89B3C;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 5px rgba(0,0,0,0.2);
@@ -1845,7 +1846,8 @@
 
         .center-area {
             grid-area: 2 / 2 / 5 / 5;
-            background: url('contoh.png') center center / cover no-repeat, rgba(245, 235, 220, 0.85);
+            /* Use contain so the background image isn't cropped; keep a subtle paper tint */
+            background: url('contoh.png') center center / contain no-repeat, rgba(245, 235, 220, 0.85);
             border: 2px solid #C89B3C;
             border-radius: 6px;
             padding: 8px;
@@ -1860,10 +1862,34 @@
         }
 
         .center-image {
-            width: 100%;
+            /* Keep central image centered and contained, leave room for title/label */
+            max-width: 92%;
+            max-height: 70%;
+            width: auto;
             height: auto;
             object-fit: contain;
+            object-position: center center;
             border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* In case tiles contain img elements instead of background images */
+        .tile img {
+            max-width: 92%;
+            max-height: 92%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Slightly scale down first tile to ensure full image visibility */
+        #tile-1 {
+            background-size: 80% auto;
+            background-position: center center;
         }
 
         .center-title {
