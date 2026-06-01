@@ -1849,7 +1849,7 @@
             background: rgba(245, 235, 220, 0.85);
             border: 2px solid #C89B3C;
             border-radius: 6px;
-            padding: 8px;
+            padding: 6px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1858,19 +1858,21 @@
             pointer-events: none;
             z-index: 5;
             overflow: hidden;
+            min-height: 0;
         }
 
         .center-image {
-            /* Keep central image centered and contained, leave room for title/label */
-            max-width: 92%;
-            max-height: 70%;
-            width: auto;
-            height: auto;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            max-height: 100%;
             object-fit: contain;
             object-position: center center;
             border-radius: 4px;
             display: block;
-            margin: 0 auto;
+            margin: 0;
+            flex: 1 1 auto;
+            min-height: 0;
         }
 
         /* In case tiles contain img elements instead of background images */
@@ -3219,7 +3221,7 @@
         };
 
         const cityData = [
-            { name: "Mulai", side: "corner", music: "", image: "https://raw.githubusercontent.com/riyanarahman320/26/main/BANDUNG.png" },
+            { name: "Mulai", side: "corner", music: "", image: "" },
             { name: "Jawa Barat", side: "side-top", music: "https://raw.githubusercontent.com/riyanarahman320/c2FraXQgdGF1dSwgZ2EgYWRpbCByYXNhbnlh/b7a423f967be69ca19239d650b05b841ddcb5158/Manuk%20Dadali%20(Angklung%20version%20cover)%20Arr%20(mp3cut.net).mp3", image: "https://raw.githubusercontent.com/lesmanaalit85-oss/resonance-odyssey/8f084a4a502a5849faffb58d6c187702587b8f8c/RUMAH%20NTT.png" },
             { name: "Nusa Tenggara Timur", side: "side-top", music: "https://raw.githubusercontent.com/riyanarahman320/c2FraXQgdGF1dSwgZ2EgYWRpbCByYXNhbnlh/b7a423f967be69ca19239d650b05b841ddcb5158/GAMELAN.mp3", image: "contoh.png" },
             { name: "Aceh", side: "side-top", image: "contoh.png" },
@@ -3573,9 +3575,11 @@
                     tile.style.gridColumn = gridCoords[i][1];
                     let inner = ``;
 
-                    // Set background image - use city.image if available, otherwise use default JAKARTA.png
-                    const imageUrl = city.image || defaultImage;
-                    tile.style.backgroundImage = `url("${imageUrl}")`;
+                    // Only set images for board tiles other than the starting tile
+                    const imageUrl = i === 0 ? '' : city.image || defaultImage;
+                    if (imageUrl) {
+                        tile.style.backgroundImage = `url("${imageUrl}")`;
+                    }
 
                     tile.innerHTML = inner;
                     board.appendChild(tile);
