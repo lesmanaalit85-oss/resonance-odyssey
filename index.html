@@ -3219,7 +3219,7 @@
         };
 
         const cityData = [
-            { name: "Mulai", side: "corner", music: "", image: "https://raw.githubusercontent.com/riyanarahman320/26/main/BANDUNG.png" },
+            { name: "Mulai", side: "corner", music: "", image: "https://raw.githubusercontent.com/lesmanaalit85-oss/resonance-odyssey/8f084a4a502a5849faffb58d6c187702587b8f8c/RUMAH%20NTT.png" },
             { name: "Jawa Barat", side: "side-top", music: "https://raw.githubusercontent.com/riyanarahman320/c2FraXQgdGF1dSwgZ2EgYWRpbCByYXNhbnlh/b7a423f967be69ca19239d650b05b841ddcb5158/Manuk%20Dadali%20(Angklung%20version%20cover)%20Arr%20(mp3cut.net).mp3", image: "https://raw.githubusercontent.com/lesmanaalit85-oss/resonance-odyssey/0e667d1cf101ee49c7ad1c4b28c10063d8c8dc3c/JAWA%20BARAT%20%282%29.png" },
             { name: "Nusa Tenggara Timur", side: "side-top", music: "https://raw.githubusercontent.com/riyanarahman320/c2FraXQgdGF1dSwgZ2EgYWRpbCByYXNhbnlh/b7a423f967be69ca19239d650b05b841ddcb5158/GAMELAN.mp3", image: "contoh.png" },
             { name: "Aceh", side: "side-top", image: "contoh.png" },
@@ -3565,8 +3565,6 @@
             const defaultImage = 'https://raw.githubusercontent.com/AYAA-lab/resonance-odyssey/0e31389538a02c42684025cbc04d8fb04add8b76/JAKARTA.png';
             
             cityData.forEach((city, i) => {
-                if (i === 0) return;
-                
                     const tile = document.createElement('div');
                     tile.className = `tile ${city.side === 'corner' ? 'corner-tile' : city.side}`;
                     tile.id = `tile-${i}`;
