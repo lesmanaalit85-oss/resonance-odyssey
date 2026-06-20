@@ -833,15 +833,18 @@
         }
 
         .center-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
+            width: 110%;
+            height: 110%;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
             object-position: center center;
             border-radius: 4px;
             display: block;
             margin: 0;
+            transform: scale(1.02);
         }
 
         .control-group {
@@ -1865,15 +1868,18 @@
         }
 
         .center-image {
-            width: 100%;
-            height: 100%;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 110%;
+            height: 110%;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
             object-position: center center;
             border-radius: 4px;
             display: block;
             margin: 0;
+            transform: scale(1.02);
         }
 
         /* In case tiles contain img elements instead of background images */
