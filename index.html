@@ -876,28 +876,25 @@
         }
 
         .tile {
-            /* Ensure images inside tiles are fully visible and centered */
-            background-size: contain;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             border: 2px solid #C89B3C;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
             position: relative;
-            padding: 6px;
+            padding: 0;
             text-align: center;
             transition: all 0.3s ease;
-            font-size: 11px;
-            line-height: 1.15;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.15);
             border-radius: 6px;
-            min-height: 0;
-            word-break: keep-all;
-            overflow-wrap: break-word;
-            white-space: normal;
+            overflow: hidden;
             cursor: default;
         }
 
@@ -1877,19 +1874,18 @@
 
         /* In case tiles contain img elements instead of background images */
         .tile img {
-            max-width: 92%;
-            max-height: 92%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             object-position: center center;
             display: block;
-            margin: 0 auto;
+            margin: 0;
         }
 
-        /* Slightly scale down first tile to ensure full image visibility */
-        #tile-1 {
-            background-size: 80% auto;
+        /* Ensure all tile backgrounds render consistently */
+        .tile,
+        .corner-tile {
+            background-size: cover;
             background-position: center center;
         }
 
