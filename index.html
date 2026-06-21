@@ -1707,30 +1707,6 @@
         .adventure-stage::before { left: 0; }
         .adventure-stage::after { right: 0; }
 
-        .road-line {
-            position: absolute;
-            width: 4px;
-            height: 100%;
-            top: 0;
-            background: repeating-linear-gradient(180deg, #fff, #fff 14%, transparent 14%, transparent 28%);
-            z-index: 1;
-        }
-
-        .road-line.line-1 { left: 33.5%; }
-        .road-line.line-2 { left: 66.5%; }
-
-        .road-tree {
-            position: absolute;
-            font-size: clamp(20px, 5vw, 28px);
-            z-index: 2;
-            transform: translateY(-50%);
-        }
-
-        .road-tree.tree-left { left: 5%; top: 22%; }
-        .road-tree.tree-left-2 { left: 5%; top: 72%; }
-        .road-tree.tree-right { right: 5%; top: 22%; }
-        .road-tree.tree-right-2 { right: 5%; top: 72%; }
-
         .adventure-player {
             position: absolute;
             width: clamp(48px, 12vw, 64px);
@@ -3102,12 +3078,6 @@
             </div>
             
             <div id="adventure-stage" class="adventure-stage">
-                <div class="road-line line-1"></div>
-                <div class="road-line line-2"></div>
-                <div class="road-tree tree-left">🌳</div>
-                <div class="road-tree tree-left tree-left-2">🌳</div>
-                <div class="road-tree tree-right">🌴</div>
-                <div class="road-tree tree-right tree-right-2">🌴</div>
                 <div id="adventure-player" class="adventure-player">🧍</div>
             </div>
             
