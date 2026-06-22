@@ -1697,40 +1697,54 @@
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding: 24px;
+            padding: 16px 20px;
             min-height: 0;
             z-index: 0; /* base layer */
         }
 
+        /* Visual inner playfield card to give arena structure */
         .adventure-stage::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.95), transparent 23%),
-                        radial-gradient(circle at 80% 12%, rgba(255,255,255,0.75), transparent 16%);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 16px;
+            width: calc(100% - 48px);
+            height: calc(100% - 48px);
+            max-height: calc(100% - 48px);
+            border-radius: 20px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, rgba(255,255,255,0.6) 100%);
+            border: 1px solid rgba(74,144,226,0.06);
+            box-shadow: 0 8px 24px rgba(31,42,55,0.06) inset;
             pointer-events: none;
             z-index: 0; /* behind items */
         }
 
+        /* subtle floor/shadow to anchor player */
         .adventure-stage::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 8px;
+            width: calc(100% - 120px);
+            height: 22px;
+            border-radius: 999px;
+            background: radial-gradient(ellipse at center, rgba(31,42,55,0.08), rgba(31,42,55,0.02));
             pointer-events: none;
-            z-index: 0; /* behind items */
+            z-index: 1; /* above background, below items/player */
         }
 
         .adventure-player {
             position: absolute;
-            width: clamp(50px, 11vw, 64px);
-            height: clamp(58px, 12vw, 72px);
+            width: clamp(64px, 12vw, 92px);
+            height: clamp(72px, 14vw, 104px);
             left: 50%;
-            bottom: 20px;
+            bottom: 36px; /* place on "floor" */
             transform: translateX(-50%);
-            transition: left 0.15s ease;
-            font-size: clamp(34px, 7vw, 42px);
-            z-index: 20; /* on top of items */
+            transition: left 0.12s ease, transform 0.12s ease;
+            font-size: clamp(40px, 8vw, 48px);
+            z-index: 30; /* top of items */
             pointer-events: none;
         }
 
@@ -1745,9 +1759,10 @@
             align-items: center;
             justify-content: center;
             font-size: clamp(16px, 3.5vw, 20px);
-            box-shadow: 0 8px 18px rgba(31,42,55,0.18), 0 0 16px rgba(74,144,226,0.3);
+            box-shadow: 0 8px 18px rgba(31,42,55,0.12), 0 0 12px rgba(74,144,226,0.22);
             border: 2px solid rgba(255,255,255,0.8);
             z-index: 15; /* ensure items sit above background but below player */
+            transition: transform 0.18s ease, top 0.18s ease, left 0.18s ease;
         }
 
         .adventure-obstacle img {
