@@ -51,15 +51,16 @@
         @media (min-width: 1024px) {
             body {
                 display: grid;
-                grid-template-columns: minmax(760px, 2.3fr) minmax(340px, 0.95fr);
-                grid-template-rows: auto 1fr;
+                /* Left sidebar | Game area | Right sidebar */
+                grid-template-columns: 240px 1fr 320px;
+                grid-template-rows: auto 1fr auto;
                 height: 100vh;
                 overflow: hidden;
                 gap: 0;
             }
 
             #top-status {
-                grid-column: 2;
+                grid-column: 1 / -1; /* span full width */
                 grid-row: 1;
                 width: 100%;
                 height: auto;
@@ -82,8 +83,8 @@
             }
 
             .game-main {
-                grid-column: 1;
-                grid-row: 1 / span 2;
+                grid-column: 2;
+                grid-row: 2;
                 width: 100%;
                 height: 100%;
                 min-height: 0;
@@ -97,9 +98,8 @@
                 overflow: visible;
                 position: relative;
             }
-
             .game-panel {
-                grid-column: 2;
+                grid-column: 3;
                 grid-row: 2;
                 width: 100%;
                 height: 100%;
@@ -117,6 +117,32 @@
                 position: relative;
                 z-index: 30;
                 box-shadow: inset 8px 0 10px var(--shadow-soft);
+            }
+
+            /* Left sidebar (new) */
+            .left-sidebar {
+                grid-column: 1;
+                grid-row: 2;
+                padding: 18px 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+                background: transparent;
+                z-index: 30;
+            }
+
+            /* Bottom full-width area for single large start button */
+            .bottom-bar {
+                grid-column: 1 / -1;
+                grid-row: 3;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 14px 18px;
+                background: transparent;
+                gap: 12px;
+                z-index: 40;
             }
 
             .game-main .monopoly-board {
@@ -3025,6 +3051,31 @@
             </div>
         </div>
     </header>
+
+    <!-- LEFT SIDEBAR (Wilayah / Target / Tips) -->
+    <aside class="left-sidebar">
+        <div class="panel-card">
+            <h3>Wilayah</h3>
+            <div class="left-card">
+                <div class="left-card-value" id="left-current-loc">-</div>
+            </div>
+        </div>
+        <div class="panel-card">
+            <h3>Target</h3>
+            <div class="left-card">
+                <div class="left-card-value" id="left-target">0 / 15</div>
+            </div>
+        </div>
+        <div class="panel-card">
+            <h3>Tips</h3>
+            <p style="font-size:0.9rem; color:var(--text-secondary)">Tangkap alat musik yang sesuai untuk lanjut ke soal.</p>
+        </div>
+    </aside>
+
+    <!-- BOTTOM BAR: single large start button -->
+    <div class="bottom-bar">
+        <button id="start-large-btn" class="btn-gold" onclick="startGame()" style="padding:14px 36px; font-size:18px;">AYO MULAI</button>
+    </div>
 
     <!-- GAME BOARD -->
     <main class="game-main">
