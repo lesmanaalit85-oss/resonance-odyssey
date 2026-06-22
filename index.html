@@ -3077,9 +3077,17 @@
         <button id="start-large-btn" class="btn-gold" onclick="startGame()" style="padding:14px 36px; font-size:18px;">AYO MULAI</button>
     </div>
 
-    <!-- GAME BOARD -->
+    <!-- GAME BOARD / MINI-GAME AREA -->
     <main class="game-main">
         <div class="game-board-wrapper">
+            <!-- Mini-game stage (center column). Kept ID agar JS tetap bekerja. -->
+            <!-- adventure-stage moved to center `.game-main` to make mini-game the central focus -->
+        </div>
+    </main>
+
+    <aside class="game-panel">
+        <!-- Monopoly board moved here to restore original board placement -->
+        <div class="game-board-wrapper-right">
             <div id="board" class="monopoly-board">
                 <div class="center-area">
                     <img src="https://raw.githubusercontent.com/riyanarahman320/26/main/BANDUNG.png" alt="Resonance Odyssey" class="center-image">
@@ -3088,9 +3096,6 @@
                 <div id="player-token" class="player-token hidden"></div>
             </div>
         </div>
-    </main>
-
-    <aside class="game-panel">
         <div class="panel-card panel-mission-card">
             <h2>Misi Saat Ini</h2>
             <p>Kunjungi kota berikutnya dan jawab pertanyaan musik Nusantara.</p>
